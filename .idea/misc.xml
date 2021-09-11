@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/badge_background.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/banner_date_background.xml" value="0.18270042194092828" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/bg_chat_me.xml" value="0.19" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/bg_chat_you.xml" value="0.1424342105263158" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/bg_wave.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/bg_wave_vector.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/bg_white_rounded.xml" value="0.1424342105263158" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/bg_white_rounded_top.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/btn_grey.xml" value="0.13355263157894737" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/card_background.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/category_background1.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/category_background2.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/category_background3.xml" value="0.22552083333333334" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/category_background4.xml" value="0.22552083333333334" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/category_background5.xml" value="0.22552083333333334" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/circle_background.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/confirm_button.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/decoration_line.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/decoration_line_2.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/decoration_line_3.xml" value="0.3798828125" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_arrow_left_black.xml" value="0.18270042194092828" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_arrow_left_white.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_attachment.xml" value="0.1424342105263158" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_chevron_down.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_chevron_right.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_circle_check.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_clock.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_empty_box.xml" value="0.1899122807017544" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_heart.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_history.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_money.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_pencil.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_send.xml" value="0.33" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/ic_truck.xml" value="0.17" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/light_orange_back.xml" value="0.20046296296296295" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/offline_circle.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/online_background.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/orange_button_background.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/pill_shape.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/rounded_background.xml" value="0.18270042194092828" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/rounded_button_background.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/rounded_input_background.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/rounded_input_background_2.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/rounded_primary_background.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/rounded_shape.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/search_back.xml" value="0.18504273504273505" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/drawable/wave_vector.xml" value="0.169140625" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/font/m_plus_rounded_1c.xml" value="0.1796875" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/font/mplusrounded1c.xml" value="0.1796875" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_banner_details.xml" value="0.33" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_card_list.xml" value="0.18" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_category_item.xml" value="0.19202898550724637" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_checkout.xml" value="0.18" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_confirm_payment.xml" value="0.25" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_countdown_payment.xml" value="0.21" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_edit_profile.xml" value="0.22" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_intro.xml" value="0.1213768115942029" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_main.xml" value="0.17" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_show_detail.xml" value="0.1717948717948718" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/edit_profile_button.xml" value="0.1" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/edit_profile_button_w_badge.xml" value="0.15703125" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_cart_list.xml" value="0.1717948717948718" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_home.xml" value="0.19" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_profile.xml" value="0.14" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_settings.xml" value="0.19202898550724637" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_support.xml" value="0.22" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/layout_holder_me.xml" value="0.13223684210526315" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/list_item_chat.xml" value="0.13223684210526315" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/my_favorites_button_w_badge.xml" value="0.15703125" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/payment_history_button_w_badge.xml" value="0.15703125" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/sent_packages_button_w_badge.xml" value="0.15703125" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/settings_activity.xml" value="0.13223684210526315" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_card.xml" value="0.1213768115942029" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_cat.xml" value="0.1213768115942029" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_chat_date.xml" value="0.13223684210526315" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_chat_me.xml" value="0.33" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_chat_you.xml" value="0.33" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_popular.xml" value="0.33" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/menu/menu_bottomappbar.xml" value="0.209375" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/xml/root_preferences.xml" value="0.22" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:paddingBottom="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        android:background="?colorPrimary"
+        android:elevation="5dp"
+        android:padding="@dimen/space15">
+
+        <TextView
+            android:id="@+id/tvSupportTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="ANDALAS Computer"
+            android:textColor="?colorOnPrimary"
+            android:textAppearance="?attr/titleTextAppearance"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="12sp"
+                android:layout_height="12sp"
+                android:src="@drawable/online_circle"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/space5"/>
+
+            <TextView
+                android:id="@+id/txtOnlineStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="Online"
+                android:textColor="?colorOnPrimary"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/space10"
+        android:paddingEnd="@dimen/space5"
+        android:paddingTop="@dimen/space5"
+        android:paddingBottom="70dp"
+        android:background="#E9EDED"
+        android:layout_alignParentBottom="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <ImageButton
+            android:id="@+id/bt_send"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/send"
+            android:gravity="center"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_send"
+            app:tint="@color/white"
+            android:background="@drawable/bg_white_rounded"
+            android:backgroundTint="#ff00"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/bt_send"
+            android:background="@drawable/bg_white_rounded">
+
+            <ImageButton
+                android:id="@+id/bt_attachment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_attachment"
+                android:padding="@dimen/space10"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/attachment" />
+
+            <EditText
+                android:id="@+id/et_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/bt_attachment"
+                android:background="@android:color/transparent"
+                android:hint="@string/enter_your_message"
+                android:inputType="textCapSentences"
+                android:maxLines="3"
+                android:padding="@dimen/space15"
+                android:textColorHint="#676767"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChat"
+        android:paddingTop="174dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/rl_bottom"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
