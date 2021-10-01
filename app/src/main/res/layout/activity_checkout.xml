@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Activity.CheckoutActivity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@id/toolbar"
         android:layout_width="match_parent"
@@ -54,9 +55,11 @@
                 android:layout_gravity="center_horizontal"
                 android:alpha="0.7"
                 android:src="@drawable/decoration_line_3"
-                app:tint="?colorOnPrimary" />
+                app:tint="?colorOnPrimary"
+                android:contentDescription="TODO" />
 
             <TextView
+                android:id="@+id/txtTotPembayaran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -211,6 +214,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="#C2C2C2"
+        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/notes_container"/>
 
     <LinearLayout
@@ -218,7 +222,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="24dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -230,22 +234,88 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/space10"
-            android:labelFor="@id/etNotes"
-            android:text="Catatan Pengiriman"
+            android:labelFor="@+id/txtAlamat"
+            android:text="Alamat Pengiriman"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@id/etNotes"
+            android:id="@+id/txtAlamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_input_background"
-            android:hint="catatan untuk penjual (optional)"
             android:importantForAutofill="no"
             android:inputType="text"
             android:minHeight="48dp"
             android:padding="@dimen/space10"
             android:textSize="14sp" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentLeft="true"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Pengiriman"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"/>
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinListPengiriman"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentRight="true"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Metode Pembayaran"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"/>
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinListMetode"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#C2C2C2"
+        app:layout_constraintTop_toBottomOf="@id/address_container"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address_container"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bayar"
+            android:id="@+id/btnBayar"
+            android:layout_gravity="center_horizontal"
+            />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

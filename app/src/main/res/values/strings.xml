@@ -162,4 +162,20 @@
     <string name="get_started">Get Started</string>
     <string name="btnSentPackage_contentDescription">Sent Packages Button</string>
     <string name="edit_profile">Edit Profile</string>
+
+    <string-array name="jenis_pengiriman">
+        <item>-- Jenis Pengiriman --</item>
+        <item>JNE</item>
+        <item>POS</item>
+        <item>TIKI</item>
+    </string-array>
+    <string-array name="metode_pembayaran">
+        <item>-- Metode Pembayaran --</item>
+        <item>BRI</item>
+        <item>BCA</item>
+        <item>Mandiri</item>
+        <item>BNI</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

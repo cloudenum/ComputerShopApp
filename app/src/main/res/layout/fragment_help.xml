@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.HelpFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hai ada yang bisa kami bantu ?"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/txt1"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt1"
+            android:id="@+id/txt2"
+            android:layout_centerHorizontal="true"
+            android:text="Yuk temukan jawaban atas masalahmu disini."
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/btn_aboutus_bg"
+                    android:src="@drawable/ic_money" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Transaksi"
+                    android:textSize="8pt" />
+
+                <ImageButton
+                    android:id="@+id/btnAboutProduct"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/btn_aboutus_bg"
+                    android:src="@drawable/ic_stock_increase" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Kesempatan\nBisnis"
+                    android:textAlignment="center"
+                    android:textSize="8pt" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnKesempatanBisnis"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:background="@drawable/btn_aboutus_bg"
+                    android:src="@drawable/ic_box"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Tentang\nProduk"
+                    android:textAlignment="center"
+                    android:textSize="8pt"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/btnGaransi"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/btn_aboutus_bg"
+                    android:src="@drawable/ic_circle_check" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="8pt"
+                    android:text="Garansi" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

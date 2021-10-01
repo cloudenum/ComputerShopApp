@@ -9,4 +9,5 @@
     <dimen name="banner_height">180dp</dimen>
     <dimen name="banner_width">320dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="supp_image_size">80dp</dimen>
 </resources>

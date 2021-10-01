@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.project.Activity.CheckoutActivity;
 import com.example.project.Activity.CountdownPaymentActivity;
 import com.example.project.Adapter.CartListAdapter;
 import com.example.project.Helper.ManagementCart;
@@ -51,7 +52,7 @@ public class CartListFragment extends Fragment {
         Button btnCheckout = view.findViewById(R.id.btnCheckout);
 
         btnCheckout.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), CountdownPaymentActivity.class);
+            Intent intent = new Intent(v.getContext(), CheckoutActivity.class);
             v.getContext().startActivity(intent);
         });
 
@@ -83,14 +84,8 @@ public class CartListFragment extends Fragment {
         float percentTax = 0.1f;
         int delivery = 6000;
 
-        int itemTotal = managementCart.getTotalPrice();
-        int tax = (int) Math.ceil((itemTotal * percentTax));
-        int total = itemTotal + tax + delivery;
+        int total = managementCart.getTotalPrice();
 
-
-        txtTotalFee.setText("Rp" + itemTotal);
-        txtTax.setText("Rp" + tax);
-        txtDelivery.setText("Rp" + delivery);
         txtTotalPrice.setText("Rp" + total);
     }
 }

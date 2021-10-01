@@ -8,6 +8,37 @@ public class FoodDomain implements Serializable {
     private String description;
     private int price;
     private int numberInCart;
+    private int fee;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public FoodDomain(String title, String pic, String description, int price, int numberInCart, int fee) {
+        this.title = title;
+        this.pic = pic;
+        this.description = description;
+        this.price = price;
+        this.numberInCart = numberInCart;
+        this.fee = fee;
+    }
+
+    public FoodDomain(){
+
+    }
+
+    public int getFee() {
+        return fee;
+    }
+
+    public void setFee(int fee) {
+        this.fee = fee;
+    }
 
     public FoodDomain(String title, String pic, String description, int price) {
         this.title = title;
