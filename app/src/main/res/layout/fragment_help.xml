@@ -45,6 +45,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
+                    android:id="@+id/btnTransaksi"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:background="@drawable/btn_aboutus_bg"
@@ -58,7 +59,7 @@
                     android:textSize="8pt" />
 
                 <ImageButton
-                    android:id="@+id/btnAboutProduct"
+                    android:id="@+id/btnKesempatanBisnis"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:layout_marginTop="30dp"
@@ -82,7 +83,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/btnKesempatanBisnis"
+                    android:id="@+id/btnAboutProduct"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:background="@drawable/btn_aboutus_bg"

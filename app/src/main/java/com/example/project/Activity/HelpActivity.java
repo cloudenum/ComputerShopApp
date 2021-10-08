@@ -1,6 +1,7 @@
 package com.example.project.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -18,6 +19,9 @@ public class HelpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
 
         FragmentManager fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
@@ -31,5 +35,11 @@ public class HelpActivity extends AppCompatActivity {
             AboutUsFragment aboutUsFragment = new AboutUsFragment();
             ft.replace(R.id.con1, aboutUsFragment).commit();
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.project.Fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,12 +25,19 @@ import com.example.project.Adapter.CategoryAdapter;
 import com.example.project.Adapter.PopularAdapter;
 import com.example.project.Domain.CategoryDomain;
 import com.example.project.Domain.FoodDomain;
+import com.example.project.Helper.TinyDB;
 import com.example.project.R;
 import com.synnapps.carouselview.CarouselView;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class HomeFragment extends Fragment {
+    CircleImageView imgProfile;
+
+    TinyDB tinyDB;
+
     private final int[] sampleImages = {
             R.drawable.banner_example1,
             R.drawable.banner_example1,
@@ -48,10 +56,23 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_home, container, false);
+        tinyDB = new TinyDB(getContext());
 
         TextView txtGreeting = fragmentView.findViewById(R.id.txtGreeting);
-        String name = "Richard";
-        txtGreeting.setText(getResources().getString(R.string.hi_greeting, name));
+        imgProfile = fragmentView.findViewById(R.id.imgProfile);
+
+        if(tinyDB.getString("name").equals("")){
+            txtGreeting.setText("Richard");
+        }else{
+            txtGreeting.setText(tinyDB.getString("name"));
+        }
+
+        String imageURI = tinyDB.getString("profileuri");
+        if(imageURI.equals("")){
+            imgProfile.setImageResource(R.drawable.profile_2);
+        }else{
+            imgProfile.setImageURI(Uri.parse(imageURI));
+        }
 
         CarouselView carouselView = fragmentView.findViewById(R.id.carouselBanner);
         carouselView.setClipToOutline(true);

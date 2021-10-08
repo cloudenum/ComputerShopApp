@@ -84,23 +84,7 @@
                     android:text="@string/edit_profile"
                     />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="64dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_vertical"
-                android:layout_marginHorizontal="@dimen/space10">
-                <include layout="@layout/my_favorites_button_w_badge"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space10"
-                    android:textAlignment="center"
-                    android:textColor="?attr/colorOnPrimary"
-                    android:textSize="12sp"
-                    android:text="Favorit Saya"
-                    />
-            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="64dp"
                 android:layout_height="wrap_content"

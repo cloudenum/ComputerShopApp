@@ -1,12 +1,14 @@
 package com.example.project.Fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,16 +20,41 @@ import com.example.project.Activity.DeliverActivity;
 import com.example.project.Activity.EditProfileActivity;
 import com.example.project.Activity.HelpActivity;
 import com.example.project.Activity.IntroActivity;
+import com.example.project.Helper.TinyDB;
 import com.example.project.R;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ProfileFragment extends Fragment {
+    CircleImageView imgProfile;
+    TextView txtName;
 
     FragmentTransaction ft;
+
+    TinyDB tinyDB;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        tinyDB = new TinyDB(getContext());
+
+        txtName = view.findViewById(R.id.tvName_About);
+        imgProfile = view.findViewById(R.id.imgProfile_About);
+
+        if(tinyDB.getString("name").equals("")){
+            txtName.setText("Richard");
+        }else{
+            txtName.setText(tinyDB.getString("name"));
+        }
+
+        String imageURI = tinyDB.getString("profileuri");
+        if(imageURI.equals("")){
+            imgProfile.setImageResource(R.drawable.profile_2);
+        }else{
+            imgProfile.setImageURI(Uri.parse(imageURI));
+        }
 
         ImageButton btnEditProfile = view.findViewById(R.id.btnEditProfile),
                 btnMyFavorites = view.findViewById(R.id.btnMyFavorites),
@@ -44,11 +71,6 @@ public class ProfileFragment extends Fragment {
         btnEditProfile.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), EditProfileActivity.class);
             startActivity(intent);
-        });
-
-        btnMyFavorites.setOnClickListener(v -> {
-//            Intent intent = new Intent(v.getContext(), MyFavoritesActivity.class);
-//            startActivity(intent);
         });
 
         btnSentPackages.setOnClickListener(v -> {

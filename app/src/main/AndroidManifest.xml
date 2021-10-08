@@ -4,9 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
-    <uses-permission-sdk-23 android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -17,17 +17,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
         <activity
+            android:name=".Activity.ImagePickerActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.HelpActivity"
             android:exported="true" />
         <activity
             android:name=".Activity.DeliverActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Activity.CheckoutActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Activity.EditProfileActivity"
-            android:exported="true" />
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".Activity.ConfirmPaymentActivity"
             android:exported="true" />
@@ -45,6 +50,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.MainActivity" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

@@ -90,19 +90,24 @@
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/activity_checkout.xml" value="0.25" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/activity_confirm_payment.xml" value="1.0" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/activity_deliver.xml" value="0.17916666666666667" />
-        <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/activity_edit_profile.xml" value="0.17916666666666667" />
+        <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/activity_edit_profile.xml" value="0.33" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/activity_halp.xml" value="0.17916666666666667" />
+        <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/activity_help.xml" value="0.17916666666666667" />
+        <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/activity_image_picker.xml" value="0.17916666666666667" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/activity_show_detail.xml" value="0.17916666666666667" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/activity_test_api.xml" value="0.17916666666666667" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/edit_profile_button.xml" value="0.1" />
+        <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/fragment_about_detail.xml" value="0.25" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/fragment_about_us.xml" value="0.33" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/fragment_cart_list.xml" value="0.25" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/fragment_delivered.xml" value="0.17916666666666667" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/fragment_delivering.xml" value="0.25" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/fragment_help.xml" value="0.33" />
+        <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/fragment_home.xml" value="0.17916666666666667" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/fragment_profile.xml" value="0.17916666666666667" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/fragment_support.xml" value="0.25" />
         <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/layout/viewholder_card.xml" value="0.22" />
+        <entry key="..\:/Project Android Studio/Project Clients/ComputerShop/ComputerShopApp/app/src/main/res/xml/file_paths.xml" value="0.17916666666666667" />
       </map>
     </option>
   </component>

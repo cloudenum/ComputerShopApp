@@ -3,10 +3,14 @@ package com.example.project.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.project.R;
 
@@ -16,51 +20,67 @@ import com.example.project.R;
  * create an instance of this fragment.
  */
 public class HelpFragment extends Fragment {
+    FragmentTransaction ft;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public HelpFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HelpFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HelpFragment newInstance(String param1, String param2) {
-        HelpFragment fragment = new HelpFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+   ImageButton btnTransaksi, btnTentangProduk, btnKesempatanBisnis, btnGaransi;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_help, container, false);
+        View view = inflater.inflate(R.layout.fragment_help, container, false);
+
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        ft = fm.beginTransaction();
+
+        btnTransaksi = view.findViewById(R.id.btnTransaksi);
+        btnTentangProduk = view.findViewById(R.id.btnAboutProduct);
+        btnKesempatanBisnis = view.findViewById(R.id.btnKesempatanBisnis);
+        btnGaransi = view.findViewById(R.id.btnGaransi);
+
+        btnGaransi.setOnClickListener(AboutDetail);
+        btnKesempatanBisnis.setOnClickListener(AboutDetail);
+        btnTransaksi.setOnClickListener(AboutDetail);
+        btnTentangProduk.setOnClickListener(AboutDetail);
+
+        return view;
     }
+
+    View.OnClickListener AboutDetail = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            AboutDetailFragment aboutDetailFragment = new AboutDetailFragment();
+            Bundle bundle = new Bundle();
+
+            switch (view.getId()){
+                case R.id.btnTransaksi:
+                    bundle.putInt("aboutdetail", 1);
+                    aboutDetailFragment.setArguments(bundle);
+
+                    ft.replace(R.id.con1, aboutDetailFragment, AboutDetailFragment.class.getSimpleName()).commit();
+                    break;
+
+                case R.id.btnAboutProduct:
+                    bundle.putInt("aboutdetail", 2);
+                    aboutDetailFragment.setArguments(bundle);
+
+                    ft.replace(R.id.con1, aboutDetailFragment, AboutDetailFragment.class.getSimpleName()).commit();
+                    break;
+
+                case R.id.btnKesempatanBisnis:
+                    bundle.putInt("aboutdetail", 3);
+                    aboutDetailFragment.setArguments(bundle);
+
+                    ft.replace(R.id.con1, aboutDetailFragment, AboutDetailFragment.class.getSimpleName()).commit();
+                    break;
+
+                case R.id.btnGaransi:
+                    bundle.putInt("aboutdetail", 4);
+                    aboutDetailFragment.setArguments(bundle);
+
+                    ft.replace(R.id.con1, aboutDetailFragment, AboutDetailFragment.class.getSimpleName()).commit();
+                    break;
+            }
+        }
+    };
 }
