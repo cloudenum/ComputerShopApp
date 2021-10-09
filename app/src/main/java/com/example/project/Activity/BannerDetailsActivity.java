@@ -35,4 +35,10 @@ public class BannerDetailsActivity extends AppCompatActivity {
         Markwon markwon = Markwon.builder(this).build();
         markwon.setMarkdown(txtBannerDetails, getResources().getString(R.string.large_text));
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 }

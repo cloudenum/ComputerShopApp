@@ -2,6 +2,7 @@ package com.example.project.LayoutManager;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +17,8 @@ public class AutoFitGridLayoutManager extends GridLayoutManager {
     }
 
     private int convertDpToPixel(int dp, Context context) {
-        return dp * (context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+//        Toast.makeText(context, "DPI: "+ context.getResources().getDisplayMetrics().densityDpi, Toast.LENGTH_LONG).show();
+        return dp * (int) Math.ceil((double) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
     public void setColumnWidth(int newColumnWidth) {
