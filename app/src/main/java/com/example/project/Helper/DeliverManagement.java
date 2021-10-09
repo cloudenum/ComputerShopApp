@@ -2,9 +2,8 @@ package com.example.project.Helper;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.example.project.Domain.FoodDomain;
+import com.example.project.Domain.ItemDomain;
 
 import java.util.ArrayList;
 
@@ -19,21 +18,21 @@ public class DeliverManagement {
         managementCart = new ManagementCart(context);
     }
 
-    public void insertToDelivering(ArrayList<FoodDomain> list) {
+    public void insertToDelivering(ArrayList<ItemDomain> list) {
 
         tinyDB.putListObject("DeliveringList", list);
     }
 
-    public void insertToDelivered(ArrayList<FoodDomain> list) {
+    public void insertToDelivered(ArrayList<ItemDomain> list) {
 
         tinyDB.putListObject("DeliveredList", list);
     }
 
-    public ArrayList<FoodDomain> getDeliveringList() {
+    public ArrayList<ItemDomain> getDeliveringList() {
         return tinyDB.getListObject("DeliveringList");
     }
 
-    public ArrayList<FoodDomain> getDeliveredList() {
+    public ArrayList<ItemDomain> getDeliveredList() {
         return tinyDB.getListObject("DeliveredList");
     }
 
@@ -42,7 +41,7 @@ public class DeliverManagement {
     }
 
     public int getTotalPrice() {
-        ArrayList<FoodDomain> listFood2 = getDeliveringList();
+        ArrayList<ItemDomain> listFood2 = getDeliveringList();
 
         int price = 0;
         int id = 0;
@@ -70,10 +69,10 @@ public class DeliverManagement {
         return price+fee;
     }
 
-    public ArrayList<FoodDomain> copyList(int _id, int fee){
-        ArrayList<FoodDomain> listFood2 = managementCart.getListCard();
-        ArrayList<FoodDomain> items1 = new ArrayList<>();
-        FoodDomain food = new FoodDomain();
+    public ArrayList<ItemDomain> copyList(int _id, int fee){
+        ArrayList<ItemDomain> listFood2 = managementCart.getListCard();
+        ArrayList<ItemDomain> items1 = new ArrayList<>();
+        ItemDomain food = new ItemDomain();
 
         for (int i = 0; i < listFood2.size(); i++) {
             food = listFood2.get(i);

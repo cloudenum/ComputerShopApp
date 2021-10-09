@@ -9,14 +9,13 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.project.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link HelpFragment#newInstance} factory method to
+ * Use the {@link HelpFragment #newInstance} factory method to
  * create an instance of this fragment.
  */
 public class HelpFragment extends Fragment {
@@ -32,6 +31,7 @@ public class HelpFragment extends Fragment {
 
         FragmentManager fm = getActivity().getSupportFragmentManager();
         ft = fm.beginTransaction();
+        ft.setReorderingAllowed(true);
 
         btnTransaksi = view.findViewById(R.id.btnTransaksi);
         btnTentangProduk = view.findViewById(R.id.btnAboutProduct);
@@ -49,36 +49,40 @@ public class HelpFragment extends Fragment {
     View.OnClickListener AboutDetail = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            AboutDetailFragment aboutDetailFragment = new AboutDetailFragment();
+            HelpDetailFragment helpDetailFragment = new HelpDetailFragment();
             Bundle bundle = new Bundle();
 
             switch (view.getId()){
                 case R.id.btnTransaksi:
                     bundle.putInt("aboutdetail", 1);
-                    aboutDetailFragment.setArguments(bundle);
+                    helpDetailFragment.setArguments(bundle);
 
-                    ft.replace(R.id.con1, aboutDetailFragment, AboutDetailFragment.class.getSimpleName()).commit();
+                    ft.addToBackStack(null);
+                    ft.replace(R.id.con1, helpDetailFragment, HelpDetailFragment.class.getSimpleName()).commit();
                     break;
 
                 case R.id.btnAboutProduct:
                     bundle.putInt("aboutdetail", 2);
-                    aboutDetailFragment.setArguments(bundle);
+                    helpDetailFragment.setArguments(bundle);
 
-                    ft.replace(R.id.con1, aboutDetailFragment, AboutDetailFragment.class.getSimpleName()).commit();
+                    ft.addToBackStack(null);
+                    ft.replace(R.id.con1, helpDetailFragment, HelpDetailFragment.class.getSimpleName()).commit();
                     break;
 
                 case R.id.btnKesempatanBisnis:
                     bundle.putInt("aboutdetail", 3);
-                    aboutDetailFragment.setArguments(bundle);
+                    helpDetailFragment.setArguments(bundle);
 
-                    ft.replace(R.id.con1, aboutDetailFragment, AboutDetailFragment.class.getSimpleName()).commit();
+                    ft.addToBackStack(null);
+                    ft.replace(R.id.con1, helpDetailFragment, HelpDetailFragment.class.getSimpleName()).commit();
                     break;
 
                 case R.id.btnGaransi:
                     bundle.putInt("aboutdetail", 4);
-                    aboutDetailFragment.setArguments(bundle);
+                    helpDetailFragment.setArguments(bundle);
 
-                    ft.replace(R.id.con1, aboutDetailFragment, AboutDetailFragment.class.getSimpleName()).commit();
+                    ft.addToBackStack(null);
+                    ft.replace(R.id.con1, helpDetailFragment, HelpDetailFragment.class.getSimpleName()).commit();
                     break;
             }
         }

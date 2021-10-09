@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.example.project.Domain.CityModel;
 import com.example.project.Domain.DeliveryModel;
-import com.example.project.Domain.FoodDomain;
+import com.example.project.Domain.ItemDomain;
 import com.example.project.Helper.DeliverManagement;
 import com.example.project.Helper.ManagementCart;
 import com.example.project.Helper.TinyDB;
@@ -52,7 +52,7 @@ public class CheckoutActivity extends AppCompatActivity implements OnItemSelecte
 
     ArrayList<CityModel> list = new ArrayList<>();
     ArrayList<DeliveryModel> deliver = new ArrayList<>();
-    ArrayList<FoodDomain> items = new ArrayList<>();
+    ArrayList<ItemDomain> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

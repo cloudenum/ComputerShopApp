@@ -11,22 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?colorPrimary"
-        app:navigationIcon="@drawable/ic_arrow_left_white"
+        android:padding="@dimen/space10"
         android:theme="@style/Theme.Project"
-        app:popupTheme="@style/Theme.AppCompat.DayNight"
         app:layout_constraintTop_toTopOf="parent"
-        android:padding="@dimen/space10">
+        app:navigationIcon="@drawable/ic_arrow_left_white"
+        app:popupTheme="@style/Theme.AppCompat.DayNight">
 
         <TextView
             android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_gravity="center"
+            android:text="Bantuan"
             android:textColor="?colorOnPrimary"
             android:textSize="32sp"
-            android:textStyle="bold"
-            android:text="Tentang Kami"/>
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
 

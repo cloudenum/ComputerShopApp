@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,11 +19,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.project.Activity.BannerDetailsActivity;
-import com.example.project.Activity.CategoryItemActivity;
 import com.example.project.Adapter.CategoryAdapter;
 import com.example.project.Adapter.PopularAdapter;
 import com.example.project.Domain.CategoryDomain;
-import com.example.project.Domain.FoodDomain;
+import com.example.project.Domain.ItemDomain;
 import com.example.project.Helper.TinyDB;
 import com.example.project.R;
 import com.synnapps.carouselview.CarouselView;
@@ -62,9 +60,9 @@ public class HomeFragment extends Fragment {
         imgProfile = fragmentView.findViewById(R.id.imgProfile);
 
         if(tinyDB.getString("name").equals("")){
-            txtGreeting.setText("Richard");
+            txtGreeting.setText("Hi, Angel Monica");
         }else{
-            txtGreeting.setText(tinyDB.getString("name"));
+            txtGreeting.setText("Hi, " + tinyDB.getString("name"));
         }
 
         String imageURI = tinyDB.getString("profileuri");
@@ -106,32 +104,29 @@ public class HomeFragment extends Fragment {
         return fragmentView;
     }
 
-    private void recyclerViewPopular(View view) {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView recyclerViewPopularList = view.findViewById(R.id.rvPopular);
-        recyclerViewPopularList.setLayoutManager(linearLayoutManager);
-
-        ArrayList<FoodDomain> foodList = new ArrayList<>();
-        foodList.add(new FoodDomain("Pepperoni pizza", "pizza1", "slices pepperoni ,mozzarella cheese, fresh oregano,  ground black pepper, pizza sauce", 16000));
-        foodList.add(new FoodDomain("Cheese Burger", "burger", "beef, Gouda Cheese, Special sauce, Lettuce, tomato ", 13000));
-        foodList.add(new FoodDomain("Vegetable pizza", "pizza2", " olive oil, Vegetable oil, pitted Kalamata, cherry tomatoes, fresh oregano, basil", 12000));
-
-        recyclerViewPopularList.setAdapter(new PopularAdapter(foodList));
-
-    }
-
     private void recyclerViewCategory(View view) {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerViewCategoryList = view.findViewById(R.id.rvCategories);
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
         ArrayList<CategoryDomain> categoryList = new ArrayList<>();
-        categoryList.add(new CategoryDomain("Pizza", "cat_1", "category_background1"));
-        categoryList.add(new CategoryDomain("Burger", "cat_2", "category_background2"));
-        categoryList.add(new CategoryDomain("Hotdog", "cat_3", "category_background3"));
-//        categoryList.add(new CategoryDomain("Drink", "cat_4", "category_background4"));
-//        categoryList.add(new CategoryDomain("Donut", "cat_5", "category_background5"));
+        categoryList.add(new CategoryDomain("Aksesoris", "cat_acc_icon", "category_background"));
+        categoryList.add(new CategoryDomain("CCTV", "cat_cctv_icon", "category_background"));
+        categoryList.add(new CategoryDomain("Networking", "cat_networking_icon", "category_background"));
 
         recyclerViewCategoryList.setAdapter(new CategoryAdapter(categoryList));
+    }
+
+    private void recyclerViewPopular(View view) {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerViewPopularList = view.findViewById(R.id.rvPopular);
+        recyclerViewPopularList.setLayoutManager(linearLayoutManager);
+
+        ArrayList<ItemDomain> items = new ArrayList<>();
+        items.add(new ItemDomain("Mouse Rexus X5 6d", "rexus_x5_6d", "MOUSE GAMING : Professional 2.4GHz Optical Wireless GAMING MOUSE Compatible USB Button Gaming Mouse Gaming Mouse Computer Mouse For PC Laptop with mini US Produk direct import dari pabrik OS Mac, Vista, Windows 7-10 Warna : MERAH, ABU2, BIRU, GOLD, HITAM Mohon no complaint Kualitas - Baik bgt. Compatible Windows 7-10, Vista, Mac Desktop PC, Laptop,Notebook 5 million clicks", 31000));
+        items.add(new ItemDomain("Mouse NYK G07", "nyk_g07", "NYK G-07 Mouse adalah mouse gaming yang memiliki 4 level DPI (800/1200/1600/2400). Mouse ini juga dilengkapi fitur Rapid Fire Button. Rapid Fire Button berfungsi untuk melakukan double click hanya dengan satu klik. Mouse ini juga memiliki desain yang ergonomis sehingga sangat nyaman saat digenggam.", 75000));
+        items.add(new ItemDomain("Kamera CCTV 5MP", "cctv_5mp", "Camera outdoor spc 5mp Body plastik berkualitas Garansi Resmi 1 tahun", 195000));
+
+        recyclerViewPopularList.setAdapter(new PopularAdapter(items));
     }
 }

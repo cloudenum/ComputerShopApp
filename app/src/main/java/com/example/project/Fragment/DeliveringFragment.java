@@ -14,16 +14,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.project.Adapter.CartListAdapter;
 import com.example.project.Adapter.DeliveringAdapter;
-import com.example.project.Domain.FoodDomain;
+import com.example.project.Domain.ItemDomain;
 import com.example.project.Helper.DeliverManagement;
-import com.example.project.Helper.ManagementCart;
-import com.example.project.Interface.ChangeNumberItemsListener;
 import com.example.project.R;
 
 import java.util.ArrayList;
@@ -42,7 +38,7 @@ public class DeliveringFragment extends Fragment {
     private DeliverManagement deliverManagement;
     FragmentTransaction ft;
 
-    ArrayList<FoodDomain> list = new ArrayList<>();
+    ArrayList<ItemDomain> list = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,7 +64,7 @@ public class DeliveringFragment extends Fragment {
         btnReceived.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList<FoodDomain> temp = new ArrayList<>();
+                ArrayList<ItemDomain> temp = new ArrayList<>();
                 list = deliverManagement.getDeliveredList();
                 temp = deliverManagement.getDeliveringList();
                 list.addAll(temp);

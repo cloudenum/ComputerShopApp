@@ -11,7 +11,7 @@
     <color name="light_grey">#F0F0F0</color>
     <color name="grey">#ECECEC</color>
 
-    <color name="colorPrimary">#5770f3</color>
+    <color name="colorPrimary">#DF8383</color>
     <color name="colorPrimaryDark">#5770f3</color>
     <color name="colorAccent">#D81B60</color>
     <color name="gradient_start">#5770f3</color>

@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.project.Domain.FoodDomain;
+import com.example.project.Domain.ItemDomain;
 import com.example.project.Helper.ManagementCart;
 import com.example.project.R;
 
@@ -17,7 +17,7 @@ public class ShowDetailActivity extends AppCompatActivity {
     private Button addToCartBtn;
     private TextView titleTxt, feeTxt, descriptionTxt, numberOrderTxt;
     private ImageView plusBtn, minusBtn, picFood;
-    private FoodDomain object;
+    private ItemDomain object;
     private int numberOrder = 1;
     private ManagementCart managementCart;
 
@@ -33,7 +33,7 @@ public class ShowDetailActivity extends AppCompatActivity {
     }
 
     private void getBundle() {
-        object = (FoodDomain) getIntent().getSerializableExtra("object");
+        object = (ItemDomain) getIntent().getSerializableExtra("object");
 
         int drawableResourceId = this.getResources().getIdentifier(object.getPic(), "drawable", this.getPackageName());
 
@@ -42,7 +42,7 @@ public class ShowDetailActivity extends AppCompatActivity {
                 .into(picFood);
 
         titleTxt.setText(object.getTitle());
-        feeTxt.setText("$" + object.getPrice());
+        feeTxt.setText("Rp" + object.getPrice());
         descriptionTxt.setText(object.getDescription());
         numberOrderTxt.setText(String.valueOf(numberOrder));
 

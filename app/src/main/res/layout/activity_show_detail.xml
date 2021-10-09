@@ -14,7 +14,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="70dp">
 
             <TextView
                 android:id="@+id/titleTxt"
@@ -30,7 +31,7 @@
                 android:id="@+id/priceTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="$"
+                tools:text="Rp"
                 android:textAlignment="center"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="24sp" />
@@ -39,7 +40,8 @@
                 android:id="@+id/foodPic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/pizza1"
+                app:srcCompat="@drawable/nyk_g07"
+                android:layout_margin="16dp"
                 android:contentDescription="@string/content_image" />
 
             <LinearLayout
@@ -82,8 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="@string/description"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="12sp" />
         </LinearLayout>
     </ScrollView>
 

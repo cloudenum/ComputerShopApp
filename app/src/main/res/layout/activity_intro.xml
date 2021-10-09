@@ -4,66 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Activity.IntroActivity">
 
-    <ImageView
-        android:id="@+id/imgBackgroundIntro"
-        android:layout_width="wrap_content"
-        android:layout_height="650dp"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/container"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background_intro" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imgBackgroundIntro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgBackgroundIntro"
-        app:layout_constraintVertical_bias="0.58000004"
-        app:srcCompat="@drawable/logo" />
+        <ImageView
+            android:id="@+id/imgBackgroundIntro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/background_intro" />
 
-    <TextView
-        android:id="@+id/txtAppName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Foodator"
-        android:textStyle="bold"
-        android:textSize="60sp"
-        android:textColor="#3D33A8"
-        app:layout_constraintBottom_toTopOf="@+id/imgLogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgBackgroundIntro"
-        app:layout_constraintVertical_bias="0.75" />
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/imgBackgroundIntro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imgBackgroundIntro"
+            app:srcCompat="@drawable/content_intro"/>
 
-    <TextView
-        android:id="@+id/txtIntroSlogan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Food Delivery App"
-        android:textColor="#3d33a8"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imgBackgroundIntro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+        <!--    <TextView-->
+        <!--        android:id="@+id/txtAppName"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="Foodator"-->
+        <!--        android:textStyle="bold"-->
+        <!--        android:textSize="60sp"-->
+        <!--        android:textColor="#3D33A8"-->
+        <!--        app:layout_constraintBottom_toTopOf="@+id/imgLogo"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="@+id/imgBackgroundIntro"-->
+        <!--        app:layout_constraintVertical_bias="0.75" />-->
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/txtIntroSlogan"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="Food Delivery App"-->
+        <!--        android:textColor="#3d33a8"-->
+        <!--        android:textSize="30sp"-->
+        <!--        android:textStyle="bold"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@+id/imgBackgroundIntro"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btnGetStarted"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginHorizontal="24dp"
         android:background="@drawable/rounded_button_background"
+        app:layout_constraintTop_toBottomOf="@id/container"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBackgroundIntro">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:layout_width="wrap_content"

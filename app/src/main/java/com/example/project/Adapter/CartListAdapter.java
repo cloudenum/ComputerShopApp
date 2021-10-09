@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.project.Domain.FoodDomain;
+import com.example.project.Domain.ItemDomain;
 import com.example.project.Helper.ManagementCart;
 import com.example.project.Interface.ChangeNumberItemsListener;
 import com.example.project.R;
@@ -19,13 +19,13 @@ import com.example.project.R;
 import java.util.ArrayList;
 
 public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHolder> {
-    private ArrayList<FoodDomain> foodDomains;
+    private ArrayList<ItemDomain> itemDomains;
     private ManagementCart managementCart;
     private ChangeNumberItemsListener changeNumberItemsListener;
 
-    public CartListAdapter(ArrayList<FoodDomain> FoodDomains, Context context, ChangeNumberItemsListener changeNumberItemsListener) {
+    public CartListAdapter(ArrayList<ItemDomain> itemDomains, Context context, ChangeNumberItemsListener changeNumberItemsListener) {
 
-        this.foodDomains = FoodDomains;
+        this.itemDomains = itemDomains;
         managementCart = new ManagementCart(context);
         this.changeNumberItemsListener = changeNumberItemsListener;
     }
@@ -41,12 +41,12 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         position = holder.getAdapterPosition();
-        holder.title.setText(foodDomains.get(position).getTitle());
-        holder.feeEachItem.setText(String.valueOf(foodDomains.get(position).getPrice()));
-        holder.totalEachItem.setText(String.valueOf(foodDomains.get(position).getNumberInCart() * foodDomains.get(position).getPrice()));
-        holder.num.setText(String.valueOf(foodDomains.get(position).getNumberInCart()));
+        holder.title.setText(itemDomains.get(position).getTitle());
+        holder.feeEachItem.setText(String.valueOf(itemDomains.get(position).getPrice()));
+        holder.totalEachItem.setText(String.valueOf(itemDomains.get(position).getNumberInCart() * itemDomains.get(position).getPrice()));
+        holder.num.setText(String.valueOf(itemDomains.get(position).getNumberInCart()));
 
-        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(foodDomains.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
+        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(itemDomains.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
@@ -57,7 +57,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         holder.plusItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                managementCart.plusNumberFood(foodDomains, finalPosition, new ChangeNumberItemsListener() {
+                managementCart.plusNumberFood(itemDomains, finalPosition, new ChangeNumberItemsListener() {
                     @Override
                     public void changed() {
                         notifyDataSetChanged();
@@ -71,7 +71,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         holder.minusItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                managementCart.MinusNumerFood(foodDomains, finalPosition1, new ChangeNumberItemsListener() {
+                managementCart.MinusNumerFood(itemDomains, finalPosition1, new ChangeNumberItemsListener() {
                     @Override
                     public void changed() {
                         notifyDataSetChanged();
@@ -86,7 +86,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return foodDomains.size();
+        return itemDomains.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

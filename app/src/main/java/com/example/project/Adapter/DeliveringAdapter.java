@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.project.Domain.FoodDomain;
+import com.example.project.Domain.ItemDomain;
 import com.example.project.Helper.DeliverManagement;
 import com.example.project.R;
 
@@ -19,11 +19,11 @@ import java.util.ArrayList;
 
 public class DeliveringAdapter extends RecyclerView.Adapter<DeliveringAdapter.ViewHolder> {
 
-    private ArrayList<FoodDomain> foodDomains;
+    private ArrayList<ItemDomain> itemDomains;
     private DeliverManagement deliverManagement;
 
-    public DeliveringAdapter(ArrayList<FoodDomain> deliveringList, Context context) {
-        this.foodDomains = deliveringList;
+    public DeliveringAdapter(ArrayList<ItemDomain> deliveringList, Context context) {
+        this.itemDomains = deliveringList;
         deliverManagement = new DeliverManagement(context);
     }
 
@@ -38,12 +38,12 @@ public class DeliveringAdapter extends RecyclerView.Adapter<DeliveringAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         position = holder.getAdapterPosition();
-        holder.title.setText(foodDomains.get(position).getTitle());
-        holder.feeEachItem.setText(String.valueOf(foodDomains.get(position).getPrice()));
-        holder.totalEachItem.setText(String.valueOf(foodDomains.get(position).getNumberInCart() * foodDomains.get(position).getPrice()));
-        holder.num.setText("x"+String.valueOf(foodDomains.get(position).getNumberInCart()));
+        holder.title.setText(itemDomains.get(position).getTitle());
+        holder.feeEachItem.setText(String.valueOf(itemDomains.get(position).getPrice()));
+        holder.totalEachItem.setText(String.valueOf(itemDomains.get(position).getNumberInCart() * itemDomains.get(position).getPrice()));
+        holder.num.setText("x"+String.valueOf(itemDomains.get(position).getNumberInCart()));
 
-        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(foodDomains.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
+        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(itemDomains.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
@@ -55,7 +55,7 @@ public class DeliveringAdapter extends RecyclerView.Adapter<DeliveringAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return foodDomains.size();
+        return itemDomains.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

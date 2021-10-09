@@ -17,18 +17,6 @@
         android:layout_height="wrap_content"
         android:paddingBottom="90dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvPopular"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingStart="22dp"
-            android:paddingEnd="22dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtPopularTitle" />
-
         <TextView
             android:id="@+id/txtPopularTitle"
             android:layout_width="wrap_content"
@@ -42,44 +30,65 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvCategories" />
 
-        <TextView
-            android:id="@+id/txtGreeting"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPopular"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            tools:text="Hi Angel Monica"
-            android:textColor="#ff3d00"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txtOrderEat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/order_and_eat"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@id/txtGreeting"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/txtGreeting"
-            app:layout_constraintTop_toBottomOf="@id/txtGreeting" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgProfile"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginEnd="32dp"
-            android:contentDescription="@string/profile_picture"
-            android:src="@drawable/profile_2"
-            app:civ_border_width="3dp"
-            app:civ_border_color="?colorPrimary"
-            app:layout_constraintBottom_toBottomOf="@id/txtOrderEat"
+            android:clipToPadding="false"
+            android:paddingStart="22dp"
+            android:paddingEnd="22dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/txtGreeting" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPopularTitle" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerGreeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="32dp"
+            android:paddingHorizontal="32dp">
+
+            <TextView
+                android:id="@+id/txtGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hi Angel Monica"
+                android:textColor="#ff3d00"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="right"
+                android:contentDescription="@string/profile_picture"
+                android:src="@drawable/profile_2"
+                app:civ_border_color="?colorPrimary"
+                app:civ_border_width="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtOrderEat"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:text="@string/order_and_eat"-->
+<!--            android:textColor="#000000"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/txtGreeting"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="@id/txtGreeting"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/txtGreeting" />-->
 
         <!--                <EditText-->
         <!--                    android:id="@+id/editTextTextPersonName"-->
@@ -117,7 +126,7 @@
             app:strokeColor="#FF777777"
             app:strokeWidth="1dp"
             android:background="@drawable/rounded_shape"
-            app:layout_constraintTop_toBottomOf="@id/imgProfile"
+            app:layout_constraintTop_toBottomOf="@id/containerGreeting"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
