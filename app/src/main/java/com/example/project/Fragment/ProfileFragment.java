@@ -15,11 +15,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
 
 import com.example.project.Activity.DeliverActivity;
 import com.example.project.Activity.EditProfileActivity;
 import com.example.project.Activity.HelpActivity;
 import com.example.project.Activity.IntroActivity;
+import com.example.project.Domain.ProfileDomain;
 import com.example.project.Helper.TinyDB;
 import com.example.project.R;
 
@@ -27,7 +29,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
     CircleImageView imgProfile;
-    TextView txtName;
+    TextView txtName, txtAddress;
 
     FragmentTransaction ft;
 
@@ -41,20 +43,47 @@ public class ProfileFragment extends Fragment {
         tinyDB = new TinyDB(getContext());
 
         txtName = view.findViewById(R.id.tvName_About);
+        txtAddress = view.findViewById(R.id.tvAddress_About);
         imgProfile = view.findViewById(R.id.imgProfile_About);
+        txtName.setText("Angel Monica");
 
-        if(tinyDB.getString("name").equals("")){
-            txtName.setText("Richard");
-        }else{
-            txtName.setText(tinyDB.getString("name"));
-        }
+        final Observer<String> nameObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String name) {
+                if (name != null) {
+                    if (!name.equals("")) {
+                        txtName.setText(name);
+                    }
+                }
+            }
+        };
 
-        String imageURI = tinyDB.getString("profileuri");
-        if(imageURI.equals("")){
-            imgProfile.setImageResource(R.drawable.profile_2);
-        }else{
-            imgProfile.setImageURI(Uri.parse(imageURI));
-        }
+        final Observer<String> addressObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String address) {
+                if (address != null) {
+                    if (!address.equals("")) {
+                        txtAddress.setText(address);
+                    }
+                }
+            }
+        };
+
+        final Observer<String> imgProfileObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String imageURI) {
+                if (imageURI != null) {
+                    if (!imageURI.equals("")) {
+                        imgProfile.setImageURI(Uri.parse(imageURI));
+                    }
+                }
+            }
+        };
+
+        ProfileDomain profile = ProfileDomain.getInstance(getContext());
+        profile.getName().observe(getViewLifecycleOwner(), nameObserver);
+        profile.getAddress().observe(getViewLifecycleOwner(), addressObserver);
+        profile.getImageURI().observe(getViewLifecycleOwner(), imgProfileObserver);
 
         ImageButton btnEditProfile = view.findViewById(R.id.btnEditProfile),
                 btnMyFavorites = view.findViewById(R.id.btnMyFavorites),

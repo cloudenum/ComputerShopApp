@@ -19,7 +19,9 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.project.Domain.ProfileDomain;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -30,6 +32,7 @@ import java.io.IOException;
 import java.util.List;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
 
 import com.example.project.Helper.TinyDB;
 import com.example.project.R;
@@ -72,32 +75,69 @@ public class EditProfileActivity extends AppCompatActivity {
         btnChangeImage.setOnClickListener(ChangeImage);
         btnSave.setOnClickListener(save);
 
-        loadProfileDefault();
+        final Observer<String> nameObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@androidx.annotation.Nullable final String name) {
+                if (name != null) {
+                    if (!name.equals("")) {
+                        etName.setText(name);
+                    }
+                }
+            }
+        };
+
+        final Observer<String> telpObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String telp) {
+                if (telp != null) {
+                    if (!telp.equals("")) {
+                        etTelp.setText(telp);
+                    }
+                }
+            }
+        };
+
+        final Observer<String> emailObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String email) {
+                if (email != null) {
+                    if (!email.equals("")) {
+                        etEmail.setText(email);
+                    }
+                }
+            }
+        };
+
+        final Observer<String> addressObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String address) {
+                if (address != null) {
+                    if (!address.equals("")) {
+                        etAddress.setText(address);
+                    }
+                }
+            }
+        };
+
+        final Observer<String> imgProfileObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String imageURI) {
+                if (imageURI != null) {
+                    if (!imageURI.equals("")) {
+                        imgProfile.setImageURI(Uri.parse(imageURI));
+                    }
+                }
+            }
+        };
+
+        ProfileDomain profile = ProfileDomain.getInstance(this);
+        profile.getName().observe(this, nameObserver);
+        profile.getAddress().observe(this, addressObserver);
+        profile.getTelp().observe(this, telpObserver);
+        profile.getEmail().observe(this, emailObserver);
+        profile.getImageURI().observe(this, imgProfileObserver);
 
         ImagePickerActivity.clearCache(this);
-    }
-
-    private void loadProfile(String url) {
-        Log.d(TAG, "Image cache path: " + url);
-
-        imgProfile.setImageURI(Uri.parse(url));
-
-//        GlideApp.with(this).load(url)
-//                .into(imgProfile);
-//        imgProfile.setColorFilter(ContextCompat.getColor(this, android.R.color.transparent));
-    }
-
-    private void loadProfileDefault() {
-        String imageURI = tinyDB.getString("profileuri");
-        if(imageURI.equals("")){
-            imgProfile.setImageResource(R.drawable.profile_2);
-        }else{
-            imgProfile.setImageURI(Uri.parse(imageURI));
-        }
-
-//        GlideApp.with(this).load(R.drawable.baseline_account_circle_black_48)
-//                .into(imgProfile);
-//        imgProfile.setColorFilter(ContextCompat.getColor(this, R.color.profile_default_tint));
     }
 
     @Override
@@ -139,17 +179,32 @@ public class EditProfileActivity extends AppCompatActivity {
             telp = etTelp.getText().toString();
             email = etEmail.getText().toString();
 
+            boolean success = false;
+            ProfileDomain profile = ProfileDomain.getInstance(view.getContext());
+
             if(!name.equals("")){
-                tinyDB.putString("name", name);
+                profile.getName().setValue(name);
+                success = true;
             }
             if(!address.equals("")){
-                tinyDB.putString("address", address);
+                profile.getAddress().setValue(address);
+                success = true;
             }
             if(!telp.equals("")){
-                tinyDB.putString("telp", telp);
+                profile.getTelp().setValue(telp);
+                success = true;
             }
             if(!email.equals("")){
-                tinyDB.putString("email", email);
+                profile.getEmail().setValue(email);
+                success = true;
+            }
+
+            profile.save(view.getContext());
+
+            if (success) {
+                Toast.makeText(view.getContext(), "Profil tersimpan!", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(view.getContext(), "Gagal!", Toast.LENGTH_LONG).show();
             }
         }
     };
@@ -198,18 +253,21 @@ public class EditProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == REQUEST_IMAGE) {
             if (resultCode == Activity.RESULT_OK) {
-                Uri uri = data.getParcelableExtra("path");
-                try {
+                if (data != null) {
+                    Uri uri = data.getParcelableExtra("path");
                     // You can update this bitmap to your server
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
+//                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
 
                     // loading profile image from local cache
-                    tinyDB.putString("profileuri", uri.toString());
-                    loadProfile(uri.toString());
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    ProfileDomain profile = ProfileDomain.getInstance(this);
+                    profile.getImageURI().setValue(uri.toString());
+                    profile.save(this);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Gagal!", Toast.LENGTH_LONG).show();
                 }
             }
         }

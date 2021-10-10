@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,6 +24,7 @@ import com.example.project.Adapter.CategoryAdapter;
 import com.example.project.Adapter.PopularAdapter;
 import com.example.project.Domain.CategoryDomain;
 import com.example.project.Domain.ItemDomain;
+import com.example.project.Domain.ProfileDomain;
 import com.example.project.Helper.TinyDB;
 import com.example.project.R;
 import com.synnapps.carouselview.CarouselView;
@@ -58,19 +60,33 @@ public class HomeFragment extends Fragment {
 
         TextView txtGreeting = fragmentView.findViewById(R.id.txtGreeting);
         imgProfile = fragmentView.findViewById(R.id.imgProfile);
+        txtGreeting.setText("Hi Angel Monica!");
 
-        if(tinyDB.getString("name").equals("")){
-            txtGreeting.setText("Hi, Angel Monica");
-        }else{
-            txtGreeting.setText("Hi, " + tinyDB.getString("name"));
-        }
+        final Observer<String> nameObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String name) {
+                if (name != null) {
+                    if (!name.equals("")) {
+                        txtGreeting.setText("Hi " + name + "!");
+                    }
+                }
+            }
+        };
 
-        String imageURI = tinyDB.getString("profileuri");
-        if(imageURI.equals("")){
-            imgProfile.setImageResource(R.drawable.profile_2);
-        }else{
-            imgProfile.setImageURI(Uri.parse(imageURI));
-        }
+        final Observer<String> imgProfileObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String imageURI) {
+                if (imageURI != null) {
+                    if (!imageURI.equals("")) {
+                        imgProfile.setImageURI(Uri.parse(imageURI));
+                    }
+                }
+            }
+        };
+
+        ProfileDomain profile = ProfileDomain.getInstance(getContext());
+        profile.getName().observe(getViewLifecycleOwner(), nameObserver);
+        profile.getImageURI().observe(getViewLifecycleOwner(), imgProfileObserver);
 
         CarouselView carouselView = fragmentView.findViewById(R.id.carouselBanner);
         carouselView.setClipToOutline(true);

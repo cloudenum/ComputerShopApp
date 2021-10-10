@@ -1,7 +1,9 @@
 package com.example.project.Activity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.project.Domain.ProfileDomain;
 import com.example.project.R;
 
 import java.util.Locale;
@@ -25,15 +28,27 @@ public class CountdownPaymentActivity extends AppCompatActivity {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
-        String name = "Angel Monica";
         String rekening = "5657 9090 8889";
         TextView txtName = findViewById(R.id.txtName);
         TextView txtRekening = findViewById(R.id.txtRekening);
         TextView txtCountdown = findViewById(R.id.txtCountdown);
         Button btnConfirmPayment = findViewById(R.id.btnConfirmPayment);
 
-        txtName.setText(name);
+        txtName.setText("Angel Monica");
         txtRekening.setText(rekening);
+        final Observer<String> nameObserver = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable final String name) {
+                if (name != null) {
+                    if (!name.equals("")) {
+                        txtName.setText(name);
+                    }
+                }
+            }
+        };
+
+        ProfileDomain profile = ProfileDomain.getInstance(this);
+        profile.getName().observe(this, nameObserver);
 
         // This should be in Service
         new CountDownTimer(60000*60*3, 1000) {
