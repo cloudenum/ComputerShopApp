@@ -30,7 +30,7 @@ public class DeliveringAdapter extends RecyclerView.Adapter<DeliveringAdapter.Vi
     @NonNull
     @Override
     public DeliveringAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_card, parent, false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_cart, parent, false);
 
         return new DeliveringAdapter.ViewHolder(inflate);
     }

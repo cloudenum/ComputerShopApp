@@ -62,6 +62,7 @@
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_checkout.xml" value="0.21" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_confirm_payment.xml" value="0.25" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_countdown_payment.xml" value="0.22" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_deliver.xml" value="0.15703125" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_edit_profile.xml" value="0.22" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_help.xml" value="0.15703125" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/activity_intro.xml" value="0.18" />
@@ -72,6 +73,7 @@
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_about_detail.xml" value="0.15703125" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_cart_list.xml" value="0.1717948717948718" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_help.xml" value="0.15703125" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_help_detail.xml" value="0.15703125" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_home.xml" value="0.19" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_profile.xml" value="0.14" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/fragment_settings.xml" value="0.19202898550724637" />
@@ -83,6 +85,7 @@
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/sent_packages_button_w_badge.xml" value="0.15703125" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/settings_activity.xml" value="0.13223684210526315" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_card.xml" value="0.1213768115942029" />
+        <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_cart.xml" value="0.25" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_cat.xml" value="0.2" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_chat_date.xml" value="0.13223684210526315" />
         <entry key="..\:/Fun/Android/store-app/app/src/main/res/layout/viewholder_chat_me.xml" value="0.33" />

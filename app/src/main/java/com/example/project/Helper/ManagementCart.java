@@ -1,8 +1,10 @@
 package com.example.project.Helper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.widget.Toast;
 
+import com.example.project.Activity.MainActivity;
 import com.example.project.Domain.ItemDomain;
 import com.example.project.Interface.ChangeNumberItemsListener;
 
@@ -36,8 +38,7 @@ public class ManagementCart {
         }
 
         tinyDB.putListObject("CardList", listFood);
-        Toast.makeText(context, "Added To Your Card", Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(context, "Added To Your Cart", Toast.LENGTH_SHORT).show();
     }
 
     public ArrayList<ItemDomain> getListCard() {

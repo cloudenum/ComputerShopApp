@@ -6,22 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".Activity.ShowDetailActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="1dp"
+        app:navigationIcon="@drawable/ic_arrow_left_black"
+        android:theme="@style/Theme.Project"
+        app:popupTheme="@style/Theme.AppCompat.DayNight"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="70dp">
+            android:paddingBottom="70dp"
+            android:paddingTop="@dimen/space15">
 
             <TextView
                 android:id="@+id/titleTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
                 android:text="@string/title"
                 android:textAlignment="center"
                 android:textSize="24sp"

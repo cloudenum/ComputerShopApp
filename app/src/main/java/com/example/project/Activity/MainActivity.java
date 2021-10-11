@@ -1,14 +1,24 @@
 package com.example.project.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.project.Fragment.CartListFragment;
+import com.example.project.Fragment.HomeFragment;
+import com.example.project.Fragment.ProfileFragment;
+import com.example.project.Fragment.SettingsFragment;
+import com.example.project.Fragment.SupportFragment;
 import com.example.project.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.io.Serializable;
+import java.lang.reflect.Type;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -17,6 +27,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigation();
+
+        int showFragment = getIntent().getIntExtra("showFragment", -1);
+        if (showFragment != -1) {
+            Fragment fragment;
+            if (showFragment == R.id.cart_list_fragment)
+                fragment = new CartListFragment();
+            else if (showFragment == R.id.profile_fragment)
+                fragment = new ProfileFragment();
+            else if (showFragment == R.id.settings_fragment)
+                fragment = new SettingsFragment();
+            else if (showFragment == R.id.support_fragment)
+                fragment = new SupportFragment();
+            else
+                fragment = new HomeFragment();
+
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setReorderingAllowed(true);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.replace(R.id.nav_host_fragment, fragment).commit();
+        }
     }
 
     private void bottomNavigation() {
